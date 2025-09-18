@@ -4,6 +4,7 @@ namespace NumbersGame
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
 
@@ -12,57 +13,48 @@ namespace NumbersGame
             int lives = 4;
 
             Random random = new Random();
-            int chosenNumber = random.Next(1, 20);            
+            int chosenNumber = random.Next(1, 2);
 
             while (true)
-            
+
             {
                 string guess = Console.ReadLine();
                 int guessNum = int.Parse(guess);
 
                 if (lives == 0)
                 {
-                    Console.WriteLine("Du DOG!");
+                    Console.WriteLine("Tyvärr, du lyckades inte gissa talet på fem försök!!");
                     break;
                 }
                 else
                 {
-                    if (guessNum < chosenNumber)
-                    {
-                        Console.WriteLine("Tyvärr, du gissade för lågt!");
-                        lives--;
-                    }
-                    else if (guessNum > chosenNumber)
-                    {
-                        Console.WriteLine("Tyvärr, du gissade för högt!");
-                        lives--;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Wohoo! Du klarade det!");
+                    GuessCheck(guessNum, chosenNumber, lives);
 
-                    }
+                }
+            }
 
+            static int GuessCheck(int guessNum, int chosenNumber, int lives)
+            {
+                if (guessNum < chosenNumber)
+                {
+                    Console.WriteLine("Tyvärr, du gissade för lågt!");
+                    lives--;
+
+                }
+                else if (guessNum > chosenNumber)
+                {
+                    Console.WriteLine("Tyvärr, du gissade för högt!");
+                    lives--;
+
+                }
+                else
+                {
+                    Console.WriteLine("Wohoo! Du klarade det!");
 
                 }
 
-
-                
-
-               
+                return lives;
             }
-
-            
-
-
-            //if (guessNum == chosenNumber)
-            //{
-            //    Console.WriteLine("Rätt");
-            //}
-            //else 
-            //{
-            //    Console.WriteLine("Fel");
-            //}
 
         }
 
@@ -77,7 +69,7 @@ namespace NumbersGame
         //    }
 
         //    return chosenNumber;
-        
+
 
 
 
