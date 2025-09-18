@@ -16,7 +16,7 @@ namespace NumbersGame
 
 
             Random random = new Random();
-            int chosenNumber = random.Next(1, 2);
+            int chosenNumber = random.Next(1, 20);
 
             while (true)
 
