@@ -9,6 +9,7 @@ namespace NumbersGame
         {
 
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
+            Console.WriteLine("DU ÄR DUM!");
 
             int lives = 4;
 
