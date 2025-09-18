@@ -9,9 +9,11 @@ namespace NumbersGame
         {
 
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
-            Console.WriteLine("DU ÄR DUM!");
+
 
             int lives = 4;
+
+
 
             Random random = new Random();
             int chosenNumber = random.Next(1, 2);
@@ -29,7 +31,7 @@ namespace NumbersGame
                 }
                 else
                 {
-                    GuessCheck(guessNum, chosenNumber, lives);
+                    lives = GuessCheck(guessNum, chosenNumber, lives);
 
                 }
             }
@@ -58,20 +60,6 @@ namespace NumbersGame
             }
 
         }
-
-        //public static int[] CreateNumbers()
-        //{
-        //    var random = new Random(5);
-        //    var chosenNumber = new int[3];
-
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        chosenNumber[i] = random.Next(1, 21);
-        //    }
-
-        //    return chosenNumber;
-
-
 
 
     }
