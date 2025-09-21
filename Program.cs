@@ -8,6 +8,12 @@ namespace NumbersGame
         static void Main(string[] args)
         {
 
+
+            //Erik Abrahamsson NET25
+
+
+
+
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
 
 
@@ -15,19 +21,20 @@ namespace NumbersGame
 
 
 
-            Random random = new Random();
+            Random random = new Random();           //genererar ett tal mellan 1-20
             int chosenNumber = random.Next(1, 20);
 
             while (true)
 
             {
-                string guess = Console.ReadLine();
+                string guess = Console.ReadLine();  //användaren får välja ett tal
                 int guessNum = int.Parse(guess);
 
-                if (lives == 0)
+                if (lives == 0)                     //kollar om användaren inte har liv kvar
                 {
                     Console.WriteLine("Tyvärr, du lyckades inte gissa talet på fem försök!!");
-                    break;
+
+                    
                 }
                 else
                 {
@@ -38,7 +45,7 @@ namespace NumbersGame
 
             static int GuessCheck(int guessNum, int chosenNumber, int lives)
             {
-                if (guessNum < chosenNumber)
+                if (guessNum < chosenNumber)                //jämför det gissade numret med det slumpade numret
                 {
                     Console.WriteLine("Tyvärr, du gissade för lågt!");
                     lives--;
@@ -53,6 +60,7 @@ namespace NumbersGame
                 else
                 {
                     Console.WriteLine("Wohoo! Du klarade det!");
+                    
 
                 }
 
